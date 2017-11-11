@@ -1,0 +1,15 @@
+/* PhotoBrowser.css */
+
+.photo-list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.photo-item {
+	margin-top: 5px;
+	list-style: none;
+}
