@@ -13,4 +13,8 @@ $ npm install
 
 Run photo-browser with [npm](https://www.npmjs.com/):
 
-Open [browser](http://localhost:3000/)):
+```
+$ npm start
+```
+
+Open [browser](http://localhost:3000/):
