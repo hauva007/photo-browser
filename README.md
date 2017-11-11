@@ -1,7 +1,7 @@
 # photo-browser
 ReactJS photo-browser
 
-Project was created with [create-react-app-mode](https://www.npmjs.com/package/create-react-app-module): starter kit for ReactJS
+Project was created with [create-react-app-module](https://www.npmjs.com/package/create-react-app-module) starter kit for ReactJS
 
 ## Installation
 
