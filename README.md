@@ -1,7 +1,7 @@
 # photo-browser
 ReactJS photo-browser
 
-App reads photos from JSONPlaceholder Fake API.
+App reads photos from [JSONPlaceholder](https://jsonplaceholder.typicode.com) Fake API.
 
 Project was created with [create-react-app-module](https://www.npmjs.com/package/create-react-app-module) starter kit for React
 
