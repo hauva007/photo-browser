@@ -57,15 +57,17 @@ class PhotoBrowser extends Component {
 		})
 		return (
             <div className='photos-main'>
+				<h1>Photo Browser</h1>
+				<p>Click thumbnail see full size photo!</p>
 				<div className="photo-pagination">
 					<Pagination
 						hideDisabled
 						activePage={this.state.activePage}
 						itemsCountPerPage={this.state.skip}
 						totalItemsCount={this.state.total}
-						onChange={this.handlePageChange} />
+						onChange={this.handlePageChange}
+					/>
 				</div>
-				
 				<ul className='photo-list'>
 					{photos}
 				</ul>
