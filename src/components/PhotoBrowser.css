@@ -1,5 +1,9 @@
 /* PhotoBrowser.css */
 
+.photo-pagination {
+	text-align: center;
+}
+
 .photo-list {
 	margin: 0;
 	padding: 0;

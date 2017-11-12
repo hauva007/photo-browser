@@ -15,10 +15,10 @@ class Photo extends Component {
 	}
 
 	getPhoto() {
-		const baseUrl = 'https://jsonplaceholder.typicode.com/photos/';
 		const photoId = this.props.match.params.id;
+		const URL = `https://jsonplaceholder.typicode.com/photos/${photoId}`;
 		
-		fetch(baseUrl + photoId)
+		fetch(URL)
 		.then( (response) => {
 			return response.json()
 		})
