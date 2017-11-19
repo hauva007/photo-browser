@@ -56,7 +56,7 @@ class PhotoBrowser extends Component {
 					<Pagination
 						hideDisabled
 						activePage={this.state.activePage}
-						itemsCountPerPage={this.state.skip}
+						itemsCountPerPage={this.state.limit}
 						totalItemsCount={this.state.total}
 						onChange={this.handlePageChange}
 					/>
