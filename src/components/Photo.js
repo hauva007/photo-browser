@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { photo } from '../utils/photos-api'
 import '../components/Photo.css';
 
 class Photo extends Component {
@@ -16,17 +17,11 @@ class Photo extends Component {
 
 	getPhoto() {
 		const photoId = this.props.match.params.id;
-		const URL = `https://jsonplaceholder.typicode.com/photos/${photoId}`;
-
-		fetch(URL)
-		.then( (response) => {
-			return response.json()
-		})
-		.then((json) => {
+		photo(photoId).then((photo) => {
 			this.setState({
-				photo: json
+				photo: photo
 			});
-		});
+		})
 	}
 	
 	render() {

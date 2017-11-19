@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../components/PhotoBrowser.css';
+import { photos } from '../utils/photos-api'
 import Pagination from "react-js-pagination";
 
 class PhotoBrowser extends Component {
@@ -9,39 +10,31 @@ class PhotoBrowser extends Component {
 		this.state = {
 			photos: [],
 			total: 0,
-			skip: 250,
+			limit: 250,
 			activePage: 1,
 		}
 	}
 
 	componentWillMount() {
-		this.readPhotos()
+		this.getPhotos()	
 	}
 
-	readPhotos() {
-		let limit = this.state.skip;
+	getPhotos() {
+		let limit = this.state.limit;
 		let start = (this.state.activePage - 1) * limit;
-		const URL = `https://jsonplaceholder.typicode.com/photos?_start=${start}&_limit=${limit}`;
-		fetch(URL)
-		.then( (response) => {
-			let total = response.headers.get('x-total-count')
+		photos(start, limit).then((response) => {
 			this.setState({
-				total: total
+				total: response.total,
+				photos: response.photos,
 			});
-			return response.json()
 		})
-		.then((json) => {
-			this.setState({
-				photos: json
-			});
-		});
 	}
 
 	handlePageChange = (pageNumber) => {
 		this.setState({
 			activePage: pageNumber
 		}, () => {
-			this.readPhotos() 
+			this.getPhotos()
 		});
 	}
 
