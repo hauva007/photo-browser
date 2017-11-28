@@ -36,15 +36,18 @@ class PhotoBrowser extends Component {
         }, () => {
             this.getPhotos()
         });
-	}
+    }
 
     render() {
         let photos = this.state.photos.map((photo, i) => {
         return (
                 <li key={i} className='photo-item'>
                     <Link to={`/photo/${photo.id}`}>
-                        <img src={photo.thumbnailUrl} title={photo.title} alt={''} />
-					</Link>
+                        <img src={photo.thumbnailUrl} alt={''} />
+                        <div className='overlay'>
+                            <div className='text'>{photo.title}</div>
+                        </div>
+                    </Link>
 				</li>
 			)
 		})

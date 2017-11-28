@@ -14,6 +14,39 @@
 }
 
 .photo-item {
-	margin-top: 5px;
-	list-style: none;
+    margin-top: 5px;
+    list-style: none;
+    position: relative;
+}
+
+.photo-item:hover .overlay {
+    left: 0;
+    width: 100%;
+}
+
+.photo-item .overlay {
+    right: 0;
+    width: 0;
+    bottom: 0;
+    left: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    transition: .3s ease;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay .text {
+    top: 50%;
+    left: 50%;
+    width: 150px; 
+    color: white;
+    font-size: 13px;
+    overflow: hidden;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 2px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
